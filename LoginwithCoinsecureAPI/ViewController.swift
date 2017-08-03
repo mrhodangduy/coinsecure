@@ -74,7 +74,7 @@ class ViewController: UIViewController {
                             else
                             {
                                 DispatchQueue.main.async {
-                                    let mess  = json?["message"] as! String
+                                    let mess  = json?["message"] as? String
                                     self.displayAlertWarning("Warning", "\(String(describing: mess))")
                                 }
                                 

@@ -38,16 +38,15 @@ class LoginViewController: UIViewController {
     }
     @IBAction func Login(_ sender: UIButton) {
         
-        if txtCode.text?.isEmpty != nil && txtPassword.text?.isEmpty != nil
+        if (txtCode.text?.characters.count)! > 0 && (txtPassword.text?.characters.count)! > 0 && (txtEmail.text?.characters.count)! > 0
         {
             webService_Login()
         }
-        else if (txtCode.text?.isEmpty)! {
-            displayAlert("Warning", "Missing code", titleAction: "Try again")
-        }
+        
         else
         {
-            displayAlert("Warning", "Missing password", titleAction: "Try again")        }
+            displayAlert("Warning", "Missing some fileds", titleAction: "Try again")
+        }
     }
     
     
